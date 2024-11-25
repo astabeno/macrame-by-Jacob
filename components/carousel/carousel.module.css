@@ -1,0 +1,120 @@
+.embla {
+   position: relative;
+   --slide-spacing: 2rem;
+   --slide-size: 30%;
+   --slide-height: 19rem;
+   height: 450px;
+
+   /* border: 1px solid red; */
+}
+
+.embla_viewport {
+   position: relative;
+   overflow: hidden;
+   height: 450px;
+   width: 100%;
+   margin: 0 auto;
+}
+
+.embla_container {
+   display: flex;
+   margin: 1.3rem auto;
+}
+
+.embla_slide {
+   flex: 0 0 auto;
+   min-width: 0;
+   max-width: 250px;
+   top: 50%;
+   height: 93%;
+   position: relative;
+   /* border: 1px solid orange; */
+}
+
+.embla_slide_img {
+   display: block;
+   margin: 0 auto;
+   left: 50%;
+   width: 90%;
+   max-height: 450px;
+   border-radius: 10px;
+}
+
+.embla_slide p {
+   position: absolute;
+   top: 85%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   background-color: RGBA(10, 10, 10, 0.5);
+   color: white;
+   font-size: 16px;
+   padding: 12px 24px;
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+}
+
+.embla_slide:hover {
+   transition: transform 0.5s ease-in-out;
+   transform: scale(1.1);
+}
+.embla_slide:hover p {
+   background-color: RGBA(10, 10, 10, 1);
+}
+
+/* iPhone landscape */
+@media only screen and (min-width: 480px) {
+   .embla_slide {
+      flex: 0 0 70%;
+   }
+}
+
+/* iPad portrait */
+@media only screen and (min-width: 768px) {
+   .embla_slide {
+      flex: 0 0 50%;
+   }
+}
+
+/* iPad landscape */
+@media only screen and (min-width: 1024px) {
+   .embla_slide {
+      flex: 0 0 auto;
+   }
+}
+
+/* Previous and Next Buttons */
+.embla_button {
+   z-index: 1;
+   fill: RGBA(255, 255, 255, 0.7);
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   top: 50%;
+   transform: translateY(-50%);
+   cursor: pointer;
+   width: 4rem;
+   height: 4rem;
+}
+
+.embla_button_prev {
+   left: 0;
+}
+
+.embla_button_next {
+   right: 0;
+}
+.embla_button:disabled {
+   opacity: 0.6;
+}
+.embla_button_svg {
+   width: 65%;
+   height: 65%;
+}
+.embla_button_svg:hover {
+   width: 75%;
+   height: 75%;
+   fill: RGBA(255, 255, 255, 1);
+}
